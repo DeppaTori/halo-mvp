@@ -13,8 +13,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import MoreIcon from '@material-ui/icons/MoreVert';
+//import MoreIcon from '@material-ui/icons/MoreVert';
+import Notifications from '@material-ui/icons/Notifications';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 const ElevationScroll = dynamic(
   () => import('./ElevationScroll'),
@@ -182,13 +184,13 @@ export default function PrimaryAppBar(props) {
           >
             <MenuIcon />
           </IconButton> */}
-       
+        
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder="Gulali…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -220,15 +222,18 @@ export default function PrimaryAppBar(props) {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-            <IconButton
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
+            <Link href="/mynotifikasi">
+              <IconButton
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                // onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <Notifications />
+              </IconButton>
+            </Link>
+            
           </div>
         </Toolbar>
       </AppBar>

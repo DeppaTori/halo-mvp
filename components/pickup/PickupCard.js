@@ -1,3 +1,4 @@
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,14 +12,13 @@ import Link from 'next/link';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    marginBottom:10
   },
   media: {
     height: 140,
   },
 });
 
-export default function ProductCard(props) {
+export default function PickupCard() {
   const classes = useStyles();
 
   return (
@@ -26,28 +26,40 @@ export default function ProductCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.image}
+          image="/others/map.png"
           title="Contemplative Reptile"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Rp. {props.harga}
+            Gerobak Roti
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.keterangan}
+            Pesanan anda siap ambil.
+            <div>
+              <b>
+              Jarak : 300 m
+              </b>
+            </div>
+            <div>
+             <br/>
+              Pesanan : <br/>
+
+              1 x Roti <br/>
+              10 x Bakwan <br/>
+
+             
+            </div>
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Link href="/beli">
-            <Button size="small" color="primary">
-              BELI
+      <Link href="/">
+          <Button size="large" color="primary">
+              Selesai
             </Button>
-        </Link>
+      </Link>
         
+       
       </CardActions>
     </Card>
   );

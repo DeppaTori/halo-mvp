@@ -10,15 +10,18 @@ import Link from 'next/link';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
-    marginBottom:10
+    marginBottom:10,
+    backgroundImage: `url(${"/others/welcome.jpg"})`
   },
   media: {
-    height: 140,
+    height: 40,
   },
+  teks: {
+    color:"white"
+  }
 });
 
-export default function ProductCard(props) {
+export default function WelcomeCard(props) {
   const classes = useStyles();
 
   return (
@@ -26,29 +29,19 @@ export default function ProductCard(props) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={props.image}
+        //  image="/others/welcome.jpg"
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Rp. {props.harga}
+          <Typography gutterBottom variant="h3" component="h2" className={classes.teks}>
+            Hello, Guest!
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {props.keterangan}
+          <Typography variant="body2" color="textSecondary" component="p" className={classes.teks}>
+            Selamat datang di acara Konser Maut Goyang Nyeburr
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Link href="/beli">
-            <Button size="small" color="primary">
-              BELI
-            </Button>
-        </Link>
-        
-      </CardActions>
+  
     </Card>
   );
 }
