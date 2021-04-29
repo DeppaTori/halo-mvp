@@ -17,6 +17,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import Notifications from '@material-ui/icons/Notifications';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 
 const ElevationScroll = dynamic(
   () => import('./ElevationScroll'),
@@ -224,13 +225,24 @@ export default function PrimaryAppBar(props) {
           <div className={classes.sectionMobile}>
             <Link href="/mynotifikasi">
               <IconButton
-                aria-label="show more"
+                aria-label="notification"
                 aria-controls={mobileMenuId}
                 aria-haspopup="true"
                 // onClick={handleMobileMenuOpen}
                 color="inherit"
               >
                 <Notifications />
+              </IconButton>
+            </Link>
+            <Link href="/cart">
+              <IconButton
+                aria-label="cart"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                // onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <ShoppingBasketIcon />
               </IconButton>
             </Link>
             

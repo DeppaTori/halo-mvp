@@ -28,6 +28,7 @@ const WelcomeCard = dynamic(
   { ssr: false }
 )
 
+
 // const ElevationScroll = dynamic(
 //   () => import('./../components/ElevationScroll'),
 //   { ssr: false }
@@ -70,7 +71,6 @@ export default function Home(props) {
       <WelcomeCard />
       <Container>
         <Box my={2}>
-         
           <ProductCard image="/product/roti.jpg" harga="35.000" nama="Roti Enak" keterangan="Dengan taburan sereal dan garam secukupnya. Sedap untuk dinikmati bersama teman" />
           <ProductCard image="/product/roti2.jpg" harga="55.000" nama="Donat Sedap" keterangan="Ketebalan roti dan bentuk bundaran yang sempurna buat menemani waktu berkumpul bersama kerabat" />
           <ProductCard image="/product/roti3.jpg" harga="40.000" nama="Bolu Wuenak" keterangan="Potongan segitiga yang sempurna yaitu segitiga sama kaki dengan taburan coklat dan satu buah ceri diatasnya" />

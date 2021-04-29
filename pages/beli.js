@@ -9,6 +9,8 @@ import Input from '@material-ui/core/Input';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { tambah } from './../redux/cart/cartSlice';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Beli = ()=>{
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [values, setValues] = React.useState({
         amount: 1,
         total: 20000,
@@ -79,9 +82,19 @@ const Beli = ()=>{
                         startAdornment={<InputAdornment position="start">Rp.</InputAdornment>}
                     />
                 </FormControl>
-                <Link href="/notifikasi">
-                    <Button variant="contained" color="primary">
-                        Bayar
+                {/* <Link href="/notifikasi"> */}
+                <Link href="/">
+                    <Button 
+                      variant="contained" 
+                      color="primary" 
+                      onClick={()=>dispatch(tambah({
+                        id:1,
+                        harga:values.price,
+                        total:values.amount,
+                        nama:'Gulali x'
+                      }))}
+                      >
+                        Tambah ke Keranjang
                     </Button>
                 </Link>
                
