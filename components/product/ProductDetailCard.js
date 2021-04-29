@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProductDetailCard() {
+export default function ProductDetailCard(props) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -51,38 +51,24 @@ export default function ProductDetailCard() {
 
   return (
     <Card className={classes.root}>
-      {/* <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      /> */}
+     
       <CardMedia
         className={classes.media}
-        image="/product/roti.jpg"
+        image={props.product.gambar}
         title="Paella dish"
       />
       <CardContent>
-      <Typography paragraph>Rp. 20.000</Typography>
+      <Typography paragraph>Rp. {props.product.harga}</Typography>
       <Link href="/penjual">
         <Typography paragraph>Penjual: Gerobak Roti (300m) </Typography>
       </Link>
       
         <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
+          {props.product.keterangan}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <Link href="/beli">
+        <Link href={"/beli/"+props.product.id}>
             <Button size="small" color="primary">
               BELI
             </Button>

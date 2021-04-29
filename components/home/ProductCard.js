@@ -23,7 +23,7 @@ export default function ProductCard(props) {
 
   return (
     <Card className={classes.root}>
-      <Link href="/productdetail">
+      <Link href={"/products/"+props.id}>
       <CardActionArea>
         
         <CardMedia
@@ -47,7 +47,7 @@ export default function ProductCard(props) {
         <Button size="small" color="primary">
           Share
         </Button>
-        <Link href="/beli">
+        <Link href={"/beli/"+props.id}>
             <Button size="small" color="primary">
               BELI
             </Button>
