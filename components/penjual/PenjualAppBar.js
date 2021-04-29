@@ -169,7 +169,7 @@ export default function PenjualAppBar(props) {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Cari makanan…"
+              placeholder="Cari barang..."
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,

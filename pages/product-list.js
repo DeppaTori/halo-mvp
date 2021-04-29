@@ -12,25 +12,14 @@ import Box from '@material-ui/core/Box';
 //import ProductCard from './../components/home/ProductCard';
 import dynamic from 'next/dynamic';
 import Toolbar from '@material-ui/core/Toolbar';
-import { getSortedPenjualsData } from './../lib/penjuals';
-
-export async function getStaticProps() {
-    const allPenjualsData = getSortedPenjualsData()
-    return {
-      props: {
-        allPenjualsData
-      }
-    }
-}
-
 
 const PrimaryAppBar = dynamic(
   () => import('./../components/PrimaryAppBar'),
   { ssr: false }
 )
 
-const PenjualCard = dynamic(
-  () => import('./../components/home/PenjualCard'),
+const ProductCard = dynamic(
+  () => import('./../components/home/ProductCard'),
   { ssr: false }
 )
 
@@ -59,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function Home({allPenjualsData}) {
+export default function Home(props) {
 
   const classes = useStyles();
 
@@ -82,11 +71,9 @@ export default function Home({allPenjualsData}) {
       <WelcomeCard />
       <Container>
         <Box my={2}>
-        {allPenjualsData.map((penjual) => (
-          <PenjualCard image={penjual.gambar}  id={penjual.id} nama={penjual.nama} keterangan={penjual.keterangan} />
-       
-        ))}
-         
+          <ProductCard image="/product/roti.jpg" harga="35.000" id="roti-enak" nama="Roti Enak" keterangan="Dengan taburan sereal dan garam secukupnya. Sedap untuk dinikmati bersama teman" />
+          <ProductCard image="/product/roti2.jpg" harga="55.000" id="donat-sedap" nama="Donat Sedap" keterangan="Ketebalan roti dan bentuk bundaran yang sempurna buat menemani waktu berkumpul bersama kerabat" />
+          <ProductCard image="/product/roti3.jpg" harga="40.000" id="bolu-wuenak" nama="Bolu Wuenak" keterangan="Potongan segitiga yang sempurna yaitu segitiga sama kaki dengan taburan coklat dan satu buah ceri diatasnya" />
         </Box>
       </Container>       
       

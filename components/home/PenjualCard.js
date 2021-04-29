@@ -10,35 +10,47 @@ import Link from 'next/link';
 
 const useStyles = makeStyles({
   root: {
-    marginBottom:10,
+    maxWidth: 345,
+    marginBottom:10
   },
   media: {
     height: 140,
   },
-  teks: {
-    color:"black"
-  }
 });
 
-export default function ReklameCard({penjual}) {
+export default function PenjualCard(props) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
+      <Link href={"/penjuals/"+props.id}>
       <CardActionArea>
         
+        <CardMedia
+            className={classes.media}
+            image={props.image}
+            title="gambar penjual"
+          />
+    
+        
         <CardContent>
-          <Typography gutterBottom variant="h3" component="h2" className={classes.teks}>
-            {penjual.nama}
+          <Typography gutterBottom variant="h5" component="h2">
+            {props.nama}
           </Typography>
-          <CardMedia
-          className={classes.media}
-          image={penjual.gambar}
-          title="Papan Reklame"
-        />
+          <Typography variant="body2" color="textSecondary" component="p">
+            {props.keterangan}
+          </Typography>
         </CardContent>
       </CardActionArea>
-  
+      </Link>
+      <CardActions>
+        <Link href={"/penjuals/"+props.id}>
+            <Button size="small" color="primary">
+              Lihat Etalase
+            </Button>
+        </Link>
+        
+      </CardActions>
     </Card>
   );
 }
