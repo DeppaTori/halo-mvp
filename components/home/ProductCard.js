@@ -37,6 +37,9 @@ export default function ProductCard(props) {
           <Typography gutterBottom variant="h5" component="h2">
             Rp. {props.harga}
           </Typography>
+          <Typography variant="h6" color="primary" component="p">
+            {props.nama}
+          </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.keterangan}
           </Typography>

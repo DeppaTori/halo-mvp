@@ -191,12 +191,13 @@ export default function PrimaryAppBar(props) {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Gulali…"
+              placeholder="Cari Penjual…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange={props.filterContent}
             />
           </div>
           <div className={classes.grow} />

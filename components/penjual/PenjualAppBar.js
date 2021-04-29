@@ -175,6 +175,7 @@ export default function PenjualAppBar(props) {
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              onChange={props.filterContent}
             />
           </div>
           <div className={classes.grow} />
