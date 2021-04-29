@@ -53,7 +53,7 @@ export default function PickupCard() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-      <Link href="/">
+      <Link href="/home">
           <Button size="large" color="primary">
               Selesai
             </Button>

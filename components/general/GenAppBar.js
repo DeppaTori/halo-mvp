@@ -31,7 +31,7 @@ export default function GenAppBar(props) {
             {props.nama}
           </Typography>
 
-          <Link href="/">
+          <Link href="/home">
               <IconButton
                 aria-label="show more"
                 //aria-controls={mobileMenuId}

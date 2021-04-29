@@ -192,7 +192,7 @@ export default function PenjualAppBar(props) {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-            <Link href="/">
+            <Link href="/home">
               <IconButton
                 aria-label="show more"
                 //aria-controls={mobileMenuId}

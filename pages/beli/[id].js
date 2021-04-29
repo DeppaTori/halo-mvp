@@ -99,7 +99,7 @@ const Beli = ({ productData })=>{
                     />
                 </FormControl>
                 {/* <Link href="/notifikasi"> */}
-                <Link href="/">
+                <Link href="/home">
                     <Button 
                       variant="contained" 
                       color="primary" 

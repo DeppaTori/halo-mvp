@@ -30,7 +30,7 @@ const Post = ({ postData })=>{
             {postData.date}
             </p>
             <h2>
-                <Link href="/">
+                <Link href="/home">
                 <a>Back to home</a>
                 </Link>
             </h2>
