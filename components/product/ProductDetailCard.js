@@ -59,8 +59,8 @@ export default function ProductDetailCard(props) {
       />
       <CardContent>
       <Typography paragraph>Rp. {props.product.harga}</Typography>
-      <Link href="/penjual">
-        <Typography paragraph>Penjual: Gerobak Roti (300m) </Typography>
+      <Link href={"/penjuals/"+props.penjual.id}>
+        <Typography paragraph>Penjual: {props.penjual.nama} ({props.penjual.jarak}m) </Typography>
       </Link>
       
         <Typography variant="body2" color="textSecondary" component="p">

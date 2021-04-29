@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getAllProductIds, getProductData } from '../../lib/products'
+import { getSortedPenjualsData } from '../../lib/penjuals'
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import dynamic from 'next/dynamic';
@@ -15,10 +16,13 @@ const ProductDetailCard = dynamic(
 )
 
 export async function getStaticProps({ params }) {
-  const productData = getProductData(params.id)
+  const productData = getProductData(params.id);
+  const allPenjuals = getSortedPenjualsData();
+  const filterPenjual = allPenjuals.filter((penjual)=>penjual.id===productData.penjual);
   return {
     props: {
-      productData
+      productData,
+      filterPenjual
     }
   }
 }
@@ -31,14 +35,14 @@ export async function getStaticPaths() {
   }
 }
 
-const Product = ({ productData })=>{
+const Product = ({ productData,filterPenjual})=>{
     return (
         <>
             <GenAppBar nama={productData.nama} />
             <Container>
                 <Box my={2}>
             
-                    <ProductDetailCard product={productData} />
+                    <ProductDetailCard product={productData} penjual={filterPenjual[0]} />
               
                
                 </Box>

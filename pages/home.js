@@ -83,7 +83,7 @@ export default function Home({allPenjualsData}) {
       <Container>
         <Box my={2}>
         {allPenjualsData.map((penjual) => (
-          <PenjualCard image={penjual.gambar}  id={penjual.id} nama={penjual.nama} keterangan={penjual.keterangan} />
+          <PenjualCard key={penjual.id} image={penjual.gambar}  id={penjual.id} nama={penjual.nama} keterangan={penjual.keterangan} />
        
         ))}
          

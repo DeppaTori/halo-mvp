@@ -2,6 +2,6 @@
 nama: 'Ekl Azma'
 harga: '3500000'
 gambar: '/product/pakaian-dua.jpg'
-penjual: '1'
+penjual: 'penjual-pakaian'
 keterangan: 'Sekedar baju'
 ---

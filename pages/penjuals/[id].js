@@ -11,7 +11,6 @@ import { getSortedProductsData } from '../../lib/products';
 export async function getStaticProps({ params }) {
   const penjualData = getPenjualData(params.id);
   const productIdsByPenjual = penjualData.barang.split(",");
-  console.log(productIdsByPenjual);
   const allProductsData = getSortedProductsData();
   const productFilteredByPenjual = allProductsData.filter(product =>productIdsByPenjual.includes(product.id))
   return {
@@ -74,7 +73,7 @@ export default function Home({penjualData,productFilteredByPenjual}) {
       <Container>
         <Box my={2}>
         {productFilteredByPenjual.map((product)=>
-          <ProductCard image={product.gambar} harga={product.harga} id={product.id} nama={product.nama} keterangan={product.keterangan} />
+          <ProductCard id={product.id} image={product.gambar} harga={product.harga} id={product.id} nama={product.nama} keterangan={product.keterangan} />
          
         )}
       
