@@ -23,12 +23,16 @@ export default function ProductCard(props) {
 
   return (
     <Card className={classes.root}>
+      <Link href="/productdetail">
       <CardActionArea>
+        
         <CardMedia
-          className={classes.media}
-          image={props.image}
-          title="Contemplative Reptile"
-        />
+            className={classes.media}
+            image={props.image}
+            title="gambar product"
+          />
+    
+        
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             Rp. {props.harga}
@@ -38,6 +42,7 @@ export default function ProductCard(props) {
           </Typography>
         </CardContent>
       </CardActionArea>
+      </Link>
       <CardActions>
         <Button size="small" color="primary">
           Share
