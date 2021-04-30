@@ -18,6 +18,8 @@ import Notifications from '@material-ui/icons/Notifications';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
+import { withStyles } from '@material-ui/core/styles';
+import { useSelector } from 'react-redux';
 
 const ElevationScroll = dynamic(
   () => import('./ElevationScroll'),
@@ -88,6 +90,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const StyledBadge = withStyles((theme) => ({
+  badge: {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}))(Badge);
+
 export default function PrimaryAppBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -95,6 +106,7 @@ export default function PrimaryAppBar(props) {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const totalItem = useSelector((state)=>state.cart.totalItem);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -236,15 +248,20 @@ export default function PrimaryAppBar(props) {
               </IconButton>
             </Link>
             <Link href="/cart">
-              <IconButton
+              {/* <IconButton
                 aria-label="cart"
                 aria-controls={mobileMenuId}
                 aria-haspopup="true"
                 // onClick={handleMobileMenuOpen}
                 color="inherit"
-              >
-                <ShoppingBasketIcon />
+              > */}
+               
+                <IconButton aria-label="cart" color="inherit">
+                <StyledBadge badgeContent={totalItem} color="secondary">
+                    <ShoppingBasketIcon />
+                </StyledBadge>
               </IconButton>
+             {/* </IconButton> */}
             </Link>
             
           </div>
