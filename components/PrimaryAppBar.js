@@ -205,7 +205,7 @@ export default function PrimaryAppBar(props) {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Cari Penjual…"
+              placeholder="Cari apa saja…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
