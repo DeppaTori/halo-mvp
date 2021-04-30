@@ -103,11 +103,11 @@ const Cart = ()=>{
                         Total: Rp. {totalPrice} 
                     </Typography>
                     {totalItem > 0 &&
-                      <Link href="/notifikasi">
+                      <Link href="/payment">
                           <Button 
                             variant="contained" 
                             color="primary" 
-                            onClick={bayarOnClick}
+                            // onClick={bayarOnClick}
                         
                             >
                               Bayar

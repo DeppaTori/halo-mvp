@@ -7,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
+import DirectionsWalk from '@material-ui/icons/DirectionsWalk';
 
 const useStyles = makeStyles({
   root: {
@@ -36,6 +37,9 @@ export default function PenjualCard(props) {
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {props.nama}
+          </Typography>
+          <Typography variant="body2" color="inherit" component="p">
+          <DirectionsWalk size="sm" color="disabled" /> {props.jarak} m
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.keterangan}

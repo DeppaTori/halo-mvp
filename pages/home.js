@@ -123,7 +123,7 @@ export default function Home({allPenjualsData,allProducts}) {
          
         }
         {penjuals.map((penjual) => (
-          <PenjualCard key={penjual.id} image={penjual.gambar}  id={penjual.id} nama={penjual.nama} keterangan={penjual.keterangan} />
+          <PenjualCard key={penjual.id} image={penjual.gambar}  id={penjual.id} nama={penjual.nama} keterangan={penjual.keterangan} jarak={penjual.jarak} />
        
         ))}
         {
