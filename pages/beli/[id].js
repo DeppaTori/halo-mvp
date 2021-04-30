@@ -13,6 +13,7 @@ import Button from '@material-ui/core/Button';
 import { useSelector, useDispatch } from 'react-redux';
 import { tambah } from './../../redux/cart/cartSlice';
 
+
 export async function getStaticProps({ params }) {
   const productData = getProductData(params.id)
   return {
@@ -63,6 +64,17 @@ const Beli = ({ productData })=>{
       setValues({ ...values, [prop]: event.target.value,['total']: event.target.value*values.price });
     };
 
+    const tambahKeCart = ()=>{
+      dispatch(tambah({
+        id:productData.id,
+        harga:values.price,
+        total:values.amount,
+        nama:productData.nama
+      }));
+  
+
+    }
+
 
     return (
         <>
@@ -103,12 +115,7 @@ const Beli = ({ productData })=>{
                     <Button 
                       variant="contained" 
                       color="primary" 
-                      onClick={()=>dispatch(tambah({
-                        id:productData.id,
-                        harga:values.price,
-                        total:values.amount,
-                        nama:productData.nama
-                      }))}
+                      onClick={tambahKeCart}
                       >
                         Tambah ke Keranjang
                     </Button>

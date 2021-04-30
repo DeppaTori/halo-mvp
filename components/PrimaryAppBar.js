@@ -20,6 +20,7 @@ import Link from 'next/link';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { withStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
+// import { hapus, kosongkan } from './../redux/notifikasi/notifikasiSlice';
 
 const ElevationScroll = dynamic(
   () => import('./ElevationScroll'),
@@ -107,6 +108,7 @@ export default function PrimaryAppBar(props) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const totalItem = useSelector((state)=>state.cart.totalItem);
+  const totalNotifikasi = useSelector((state)=>state.notifikasi.total);
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -237,15 +239,20 @@ export default function PrimaryAppBar(props) {
           </div>
           <div className={classes.sectionMobile}>
             <Link href="/mynotifikasi">
-              <IconButton
+              {/* <IconButton
                 aria-label="notification"
                 aria-controls={mobileMenuId}
                 aria-haspopup="true"
                 // onClick={handleMobileMenuOpen}
                 color="inherit"
-              >
-                <Notifications />
+              > */}
+              <IconButton aria-label="cart" color="inherit">
+                <StyledBadge badgeContent={totalNotifikasi} color="secondary">
+                    <Notifications />
+                </StyledBadge>
               </IconButton>
+             
+              {/* </IconButton> */}
             </Link>
             <Link href="/cart">
               {/* <IconButton

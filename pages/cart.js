@@ -17,6 +17,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { hapus, kosongkan } from './../redux/cart/cartSlice';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
+import { tambah as notifikasiTambah } from './../redux/notifikasi/notifikasiSlice';
 
 const GenAppBar = dynamic(
     () => import('../components/general/GenAppBar'),
@@ -52,6 +53,13 @@ const Cart = ()=>{
     const items = useSelector((state)=>state.cart.items);
     const totalPrice = useSelector((state)=>state.cart.totalPrice);
     const totalItem = useSelector((state)=>state.cart.totalItem);
+    const bayarOnClick = ()=>{
+      dispatch(kosongkan());
+      dispatch(notifikasiTambah({
+        id:1,
+        penjualId:'penjual-makanan'
+      }));
+    }
     return (
         <>
              <GenAppBar nama="Keranjang Belanja" />
@@ -99,7 +107,7 @@ const Cart = ()=>{
                           <Button 
                             variant="contained" 
                             color="primary" 
-                            onClick={()=>dispatch(kosongkan())}
+                            onClick={bayarOnClick}
                         
                             >
                               Bayar

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const cartSlide = createSlice({
-    name: 'counter',
+    name: 'cart',
     initialState: {
         totalItem:0,
         totalPrice:0,

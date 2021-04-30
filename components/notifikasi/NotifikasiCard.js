@@ -9,6 +9,8 @@ import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { hapus, kosongkan } from './../../redux/notifikasi/notifikasiSlice';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,13 +38,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function MediaControlCard() {
+export default function NotifikasiCard() {
   const classes = useStyles();
   const theme = useTheme();
 
+  const dispatch = useDispatch();
+
+  const notifikasiCardOnClick= ()=>{
+    dispatch(kosongkan());
+  }
+
   return (
     <Link href="/pickup">
-     <Card className={classes.root}>
+     <Card className={classes.root} onClick={notifikasiCardOnClick}>
          
            
          <div className={classes.details}>
