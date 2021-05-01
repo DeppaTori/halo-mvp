@@ -20,6 +20,7 @@ import Link from 'next/link';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import { withStyles } from '@material-ui/core/styles';
 import { useSelector } from 'react-redux';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 // import { hapus, kosongkan } from './../redux/notifikasi/notifikasiSlice';
 
 const ElevationScroll = dynamic(
@@ -238,7 +239,7 @@ export default function PrimaryAppBar(props) {
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
-            <Link href="/mynotifikasi">
+          <Link href="/mynotifikasi">
               {/* <IconButton
                 aria-label="notification"
                 aria-controls={mobileMenuId}
@@ -254,6 +255,7 @@ export default function PrimaryAppBar(props) {
              
               {/* </IconButton> */}
             </Link>
+            
             <Link href="/cart">
               {/* <IconButton
                 aria-label="cart"
@@ -262,13 +264,30 @@ export default function PrimaryAppBar(props) {
                 // onClick={handleMobileMenuOpen}
                 color="inherit"
               > */}
-               
+              {/* AccountCircleIcon */}
                 <IconButton aria-label="cart" color="inherit">
                 <StyledBadge badgeContent={totalItem} color="secondary">
                     <ShoppingBasketIcon />
                 </StyledBadge>
               </IconButton>
              {/* </IconButton> */}
+            </Link>
+
+            <Link href="/profile">
+              {/* <IconButton
+                aria-label="notification"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                // onClick={handleMobileMenuOpen}
+                color="inherit"
+              > */}
+              <IconButton aria-label="account" color="inherit">
+                <StyledBadge badgeContent={totalNotifikasi} color="secondary">
+                <AccountCircleIcon />
+                </StyledBadge>
+              </IconButton>
+             
+              {/* </IconButton> */}
             </Link>
             
           </div>
