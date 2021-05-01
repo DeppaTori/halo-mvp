@@ -70,11 +70,11 @@ export default function Login() {
 
   const signInOnClick = (e)=>{
  
-    if(usernameField==="halo" && passwordField==="guest"){
+    // if(usernameField==="halo" && passwordField==="guest"){
       router.push("/home");
-    }else{
-      setErrorLoginMsg("Username or password is incorrect.");
-    }
+    // }else{
+    //   setErrorLoginMsg("Username or password is incorrect.");
+    // }
     
   }
 
