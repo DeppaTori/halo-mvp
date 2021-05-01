@@ -39,11 +39,11 @@ const ManageToko = ()=>{
                         </Button>
                     </Link>
                     <br/>
-                    <Link href="/toko/tokosaya">
+                    {/* <Link href="/toko/tokosaya">
                         <Button variant="contained" color="secondary" >
                             Kunjungi Toko Saya
                         </Button>
-                    </Link>
+                    </Link> */}
                     <br/>
                     <Link href="/toko/laporan">
                         <Button variant="contained" color="secondary"  className={classes.tombol}>
